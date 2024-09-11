@@ -1,0 +1,100 @@
+import React from "react";
+import bg from "../../assets/img/bg2.png";
+
+function HomeLocation() {
+  return (
+    <>
+      <div className="mx-20 bg-red-500 p-14 rounded-3xl shadow-lg flex flex-col gap-10">
+        <div>
+          <span className="bg-red-100 text-red-600 px-5 py-1 font-semibold rounded-full">
+            &minus; Location
+          </span>
+        </div>
+        <div className="md:grid md:grid-cols-4 md:gap-y-10 flex flex-wrap">
+          <div className="w-60 ">
+            <h1 className="text-5xl font-semibold text-white leading-normal">
+              Discover Events Near You
+            </h1>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+          <div className="w-60 flex flex-col gap-2 items-center">
+            <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
+              <img
+                className="object-cover"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"
+                alt=""
+              />
+            </div>
+            <h5 className="font-semibold text-white">Jakarta</h5>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <button className=" px-16 py-1 rounded-xl shadow bg-red-100 hover:bg-red-200 text-red-500 font-semibold">
+            See All
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default HomeLocation;
