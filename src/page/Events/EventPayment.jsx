@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetEventQuery } from "../../redux/services/event";
 import axios from "axios";
-import { removeDataSection } from "../../redux/reducers/section";
 import Loading from "../../component/Loading";
 
 function EventPayment() {
