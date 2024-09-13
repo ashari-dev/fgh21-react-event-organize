@@ -97,12 +97,12 @@ function EditProfile() {
       <Layout2>
         <div className="flex flex-col gap-10">
           <h1 className="text-2xl font-semibold">Profile</h1>
-          <div className="flex">
+          <div className="flex flex-col-reverse gap-5 md:flex-row ">
             <form
               onSubmit={handleSubmit}
               className="flex-1 flex flex-col gap-10"
             >
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="fullName">Full Name</label>
                 <div className="border rounded-xl overflow-hidden flex">
                   <input
@@ -115,7 +115,7 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="username">Username</label>
                 <div className="border rounded-xl overflow-hidden flex">
                   <input
@@ -128,7 +128,7 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="email">Email</label>
                 <div className="border rounded-xl overflow-hidden flex">
                   <input
@@ -141,7 +141,7 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="phoneNumber">Phone Numbar</label>
                 <div className="border rounded-xl overflow-hidden flex">
                   <input
@@ -154,7 +154,7 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <span>Gender</span>
                 <div className="overflow-hidden flex gap-5">
                   <div className="flex gap-3 items-center">
@@ -180,7 +180,7 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="profession">Profession</label>
                 <div className="border rounded-xl overflow-hidden flex">
                   <input
@@ -193,9 +193,9 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="nationality">Nationality</label>
-                <div className="border rounded-xl overflow-hidden flex w-[245px] px-3">
+                <div className="border rounded-xl overflow-hidden flex md:w-[245px] px-3">
                   <select
                     className="bg-white py-2 outline-none w-full"
                     name="nationality"
@@ -215,9 +215,9 @@ function EditProfile() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
                 <label htmlFor="birthdate">Birthdate</label>
-                <div className="border rounded-xl overflow-hidden flex w-[245px] px-3">
+                <div className="border rounded-xl overflow-hidden flex md:w-[245px] px-3">
                   <input
                     type="date"
                     name="birthdate"
@@ -264,7 +264,7 @@ function EditProfile() {
                   <button className="border-2 text-red-500 border-red-500 py-2 px-16 rounded-xl shadow-md font-semibold">
                     Choose Photo
                   </button>
-                  <div className="flex flex-col gap-3">
+                  <div className="md:flex flex-col gap-3 hidden">
                     <span className="text-xs">Image size: max, 2 MB</span>
                     <span className="text-xs">
                       Image formats: .JPG, .JPEG, .PNG
