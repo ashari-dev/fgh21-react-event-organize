@@ -41,10 +41,10 @@ function EventPage() {
       {isLoading ? <Loading /> : ""}
 
       <Layout1>
-        <div className="p-10 m-10 border rounded-3xl shadow-lg flex">
+        <div className="md:p-10 p-5 md:m-10 border md:rounded-3xl md:shadow-lg flex flex-col md:flex-row">
           <div className="flex-1 flex flex-col gap-5 items-center">
             <div className="w-[375px] h-[490px] flex overflow-hidden rounded-3xl bg-red-500 shadow-xl bg-gradient-to-t from-zinc-900 to-zinc-50 relative ">
-              <div className="bg-gradient-to-t from-zinc-900 to-transparent absolute w-full h-full opacity-100"></div>
+              <div className=" bg-gradient-to-t from-zinc-900 to-transparent absolute w-full h-full opacity-100"></div>
               <img
                 className="object-cover w-full"
                 src={data?.result?.image}
@@ -56,14 +56,14 @@ function EventPage() {
             ) : (
               <button
                 onClick={handlerWishlist}
-                className="flex gap-3 items-center text-xl"
+                className=" md:flex absolute md:relative right-8 mt-5 md:mt-0 gap-3 items-center text-xl text-white md:text-black"
               >
                 <FaRegHeart />{" "}
-                <span className="font-semibold">Add to Wishlist</span>
+                <span className="font-semibold hidden md:block">Add to Wishlist</span>
               </button>
             )}
           </div>
-          <div className="flex-1 flex flex-col gap-7">
+          <div className="flex-1 flex mt-5 md:mt-0 flex-col gap-7">
             <h1 className="text-2xl font-semibold">
               Sights & Sounds Exhibition
             </h1>

@@ -5,7 +5,7 @@ function HomePartner() {
   return (
     <>
       <div className="bg-blue-900 relative overflow-hidden">
-        <img className="h-full absolute" src={bg} alt="" />
+        <img className="h-full md:w-full absolute" src={bg} alt="" />
         <div className="top-0 p-20 w-full flex flex-col gap-10">
           <div className="flex flex-col gap-5 items-center">
             <span className="bg-blue-200 text-blue-600 px-5 py-1 font-semibold rounded-full">
