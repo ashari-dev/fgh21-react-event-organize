@@ -55,9 +55,9 @@ function ChangePassword() {
               onSubmit={handlerChangePassword}
               className="flex flex-col gap-10"
             >
-              <div className="flex items-center justify-between">
+              <div className="md:flex items-center justify-between">
                 <label htmlFor="oldPass">Old Password</label>
-                <div className="border py-2 w-2/3 rounded-xl outline-none px-3">
+                <div className="border py-2 md:w-2/3 rounded-xl outline-none px-3">
                   <input
                     id="oldPass"
                     name="oldPass"
@@ -66,9 +66,9 @@ function ChangePassword() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="md:flex items-center justify-between">
                 <label htmlFor="newPass">New Password</label>
-                <div className="border py-2 w-2/3 rounded-xl outline-none px-3">
+                <div className="border py-2 md:w-2/3 rounded-xl outline-none px-3">
                   <input
                     id="newPass"
                     name="newPass"
@@ -77,9 +77,9 @@ function ChangePassword() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="md:flex items-center justify-between">
                 <label htmlFor="conftPass">Confirm Password</label>
-                <div className="border py-2 w-2/3 rounded-xl outline-none px-3">
+                <div className="border py-2 md:w-2/3 rounded-xl outline-none px-3">
                   <input
                     id="conftPass"
                     name="conftPass"
