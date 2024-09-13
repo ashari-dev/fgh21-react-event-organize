@@ -15,8 +15,8 @@ function ForgetPassword() {
   return (
     <>
       <section className="h-screen flex">
-        <div className="flex-1 bg-blue-900"></div>
-        <div className="flex-1 bg-blue-900"></div>
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
         <div className="flex-1 bg-blue-200 flex flex-col gap-10 justify-center items-center shadow-lg shadow-slate-200 relative">
           <button
             onClick={() => {
@@ -33,7 +33,7 @@ function ForgetPassword() {
               <h4 className="text-sm">You’ll get mail soon on your email</h4>
             </div>
           </div>
-          <form onSubmit={handlerLogin} className="flex flex-col gap-5 px-20">
+          <form onSubmit={handlerLogin} className="flex flex-col gap-5 md:px-20">
             <div className="flex flex-col border px-5 py-2 rounded-xl shadow bg-white">
               <input
                 type="email"

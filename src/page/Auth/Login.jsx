@@ -49,8 +49,8 @@ function Login() {
   return (
     <>
       <section className="h-screen flex">
-        <div className="flex-1 bg-blue-900"></div>
-        <div className="flex-1 bg-blue-200 flex flex-col gap-10 justify-center items-center shadow-lg shadow-slate-200 relative">
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
+        <div className="md:flex-1 w-full bg-blue-200 flex flex-col gap-10 justify-center items-center md:shadow-lg md:shadow-slate-200 relative">
           <button
             onClick={() => {
               nav("/auth/register");
@@ -74,7 +74,7 @@ function Login() {
               <h4 className="text-sm">Hi, Welcome back </h4>
             </div>
           </div>
-          <form onSubmit={handlerLogin} className="flex flex-col gap-5 px-20">
+          <form onSubmit={handlerLogin} className="flex flex-col gap-5 md:px-20">
             {alert ? (
               <div className="bg-red-200 py-1 px-5 text-red-600 rounded-lg">
                 {msg}
@@ -127,7 +127,7 @@ function Login() {
             </Link>
           </div>
         </div>
-        <div className="flex-1 bg-blue-900"></div>
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
       </section>
     </>
   );

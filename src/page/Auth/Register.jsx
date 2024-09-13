@@ -90,7 +90,7 @@ function Register() {
           </div>
           <form
             onSubmit={handlerRegister}
-            className="flex flex-col gap-5 px-20"
+            className="flex flex-col gap-5 md:px-20"
           >
             {alert ? (
               <div className="bg-red-200 py-1 px-5 text-red-600 rounded-lg">
@@ -195,8 +195,8 @@ function Register() {
             </div>
           </form>
         </div>
-        <div className="flex-1 bg-blue-900"></div>
-        <div className="flex-1 bg-blue-900"></div>
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
+        <div className="flex-1 bg-blue-900 hidden md:flex"></div>
       </section>
     </>
   );
