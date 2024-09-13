@@ -52,7 +52,7 @@ function EventPayment() {
     <>
       {isLoading ? <Loading /> : ""}
       <Layout1>
-        <div className="p-10 m-10 border rounded-3xl shadow-lg flex">
+        <div className="md:p-10 p-5 md:m-10 border md:rounded-3xl md:shadow-lg flex flex-col md:flex-row">
           <div className="flex-1 flex flex-col">
             <div className="flex-1 flex flex-col gap-5 ">
               <div className="text-xl font-semibold">Payment Method</div>
@@ -198,7 +198,7 @@ function EventPayment() {
           </div>
 
           <div className="flex-1 flex flex-col gap-10">
-            <div className="border-l-2 flex justify-center">
+            <div className="md:border-l-2 md:border-t-0 border-t-2 mt-5 pt-5 md:mt-0 md:pt-0 flex justify-center">
               <div className="w-3/4 flex flex-col gap-10">
                 <h1 className="text-xl font-semibold">Ticket Detail</h1>
                 <div className="flex flex-col gap-3">
