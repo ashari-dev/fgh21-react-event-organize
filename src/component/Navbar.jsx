@@ -15,12 +15,12 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex w-full  items-center px-20 py-2 shadow">
+      <nav className="flex w-full md:flex-row flex-col items-center gap-5 px-20 py-2 shadow">
         <ScrollRestoration />
         <div className="flex flex-1">
           <Logo />
         </div>
-        <ul className="flex flex-1 justify-center gap-10 text-black">
+        <ul className="flex flex-1 md:flex-row flex-col justify-center gap-5 md:gap-10 text-black">
           <Link
             className="hover:underline hover:-skew-y-3 hover:font-semibold hover:text-lg hover:text-gray-300"
             to={"/"}

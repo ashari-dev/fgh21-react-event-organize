@@ -4,7 +4,7 @@ import bg from "../../assets/img/bg2.png";
 function HomeLocation() {
   return (
     <>
-      <div className="mx-20 bg-red-500 p-14 rounded-3xl shadow-lg flex flex-col gap-10">
+      <div className="md:mx-20 bg-red-500 p-14 rounded-3xl shadow-lg flex flex-col gap-10">
         <div>
           <span className="bg-red-100 text-red-600 px-5 py-1 font-semibold rounded-full">
             &minus; Location

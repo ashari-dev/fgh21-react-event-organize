@@ -5,8 +5,8 @@ import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 function Footer() {
   return (
     <>
-      <footer className="flex flex-col gap-10 px-20 py-20">
-        <div className="flex">
+      <footer className="flex flex-col gap-10 px-5 md:px-20 py-20">
+        <div className="flex flex-col gap-5 md:flex-row">
           <div className="flex flex-col justify-center items-center flex-1">
             <div className="flex flex-col gap-5">
               <Logo />
@@ -19,7 +19,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="flex-1 items-center flex flex-col gap-3">
+          <div className="flex-1 items-center md:flex flex-col gap-3">
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold">Title</h3>
               <ul className="flex flex-col gap-2">
@@ -30,7 +30,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex-1 items-center flex flex-col gap-3">
+          <div className="flex-1 items-center md:flex flex-col gap-3">
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold">Title</h3>
               <ul className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex-1 items-center flex flex-col gap-3">
+          <div className="flex-1 items-center md:flex flex-col gap-3">
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold">Title</h3>
               <ul className="flex flex-col gap-2">

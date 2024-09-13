@@ -8,7 +8,7 @@ function HomeCategory() {
   const { data, error, isLoading } = useListcategoriesQuery();
   return (
     <>
-      <div className="flex flex-col gap-10 px-20">
+      <div className="flex flex-col gap-10 md:px-20 px-5">
         <div className="flex flex-col gap-5 items-center">
           <span className="bg-yellow-200 text-yellow-600 px-5 py-1 font-semibold rounded-full">
             &minus; Category
@@ -16,7 +16,7 @@ function HomeCategory() {
           <h1 className="text-4xl font-semibold">Browse Events By Category</h1>
         </div>
         <div className="flex justify-center">
-          <ul className="flex gap-10">
+          <ul className="flex gap-10 overflow-x-scroll">
             {data?.result.map((i) => (
               <li
                 key={i.id}
@@ -29,17 +29,17 @@ function HomeCategory() {
         </div>
         <div className="flex justify-between">
           <div className="flex items-center">
-            <button className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
+            <button className="hidden md:block p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
               <FaArrowLeft />
             </button>
           </div>
-          <div className="flex gap-10">
+          <div className="flex gap-10 overflow-x-scroll">
             <CardEvent />
             <CardEvent />
             <CardEvent />
           </div>
           <div className="flex items-center">
-            <button className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
+            <button className="hidden md:block p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
               <FaArrowRight />
             </button>
           </div>
