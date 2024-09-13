@@ -68,7 +68,7 @@ function EventBooking() {
       {isLoading ? <Loading /> : ""}
 
       <Layout1>
-        <div className="p-10 m-10 border rounded-3xl shadow-lg flex">
+        <div className="md:p-10 p-5 md:m-10 border md:rounded-3xl md:shadow-lg flex flex-col md:flex-row">
           <div className="flex-1 flex items-center justify-center">
             <div className="w-[375px] h-[490px] flex overflow-hidden rounded-3xl bg-red-500 shadow-xl bg-gradient-to-t from-zinc-900 to-zinc-50 relative ">
               <div className="bg-gradient-to-t from-zinc-900 to-transparent absolute w-full h-full opacity-100"></div>
@@ -79,7 +79,7 @@ function EventBooking() {
               />
             </div>
           </div>
-          <div className="flex-1 flex flex-col gap-10">
+          <div className="flex-1 flex flex-col gap-10 mt-5 md:mt-0">
             <div className="text-xl font-bold flex items-center justify-between">
               <span>{data?.result?.title}</span>
               <div
@@ -103,7 +103,7 @@ function EventBooking() {
                 />
               ))}
             </div>
-            <hr />
+            <hr className=""/>
             <div className="flex flex-col gap-5">
               <div className="text-sm font-bold flex justify-between">
                 Ticket Section
