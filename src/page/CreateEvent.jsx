@@ -61,7 +61,7 @@ function CreateEvent() {
             onClick={() => {
               setModal(true);
             }}
-            className="bg-[#EAF1FF] h-[50px] w-[125px] flex items-center justify-center text-sm gap-3 text-[#180161] rounded-xl"
+            className="bg-[#EAF1FF] hidden h-[50px] w-[125px] md:flex items-center justify-center text-sm gap-3 text-[#180161] rounded-xl"
           >
             Create
           </button>
@@ -108,10 +108,13 @@ function CreateEvent() {
             ))
           ) : (
             <>
-              <div className="text-2xl font-semibold">
+              <div className="mt-10 hidden md: md:mt-0 text-2xl font-semibold">
                 you don't have an event
               </div>
-              <div className="w-[50%] flex text-[#B3B8B8] text-md text-center">
+              <div className="mt-10 md:hidden text-2xl text-center font-semibold">
+                Cannot create in mobile mode
+              </div>
+              <div className="w-[50%] hidden md:flex text-[#B3B8B8] text-md text-center">
                 It appears you haven't bought any tickets yet. Maybe try create
                 these?
               </div>
