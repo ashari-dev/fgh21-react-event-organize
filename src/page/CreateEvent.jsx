@@ -108,7 +108,7 @@ function CreateEvent() {
             ))
           ) : (
             <>
-              <div className="mt-10 hidden md: md:mt-0 text-2xl font-semibold">
+              <div className="mt-10 hidden md:flex md:mt-0 text-2xl font-semibold">
                 you don't have an event
               </div>
               <div className="mt-10 md:hidden text-2xl text-center font-semibold">

@@ -34,8 +34,26 @@ function Modal(props) {
           },
         }
       );
-
-      props.close(false);
+      if (response.data.success) {
+        try {
+          const respon = await axios.post(
+            `${url}/event/category`,
+            {
+              eventId: response.data.result.id,
+              categoryId: parseInt(e.target.category.value),
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${props.token}`,
+              },
+            }
+          );
+          console.log(respon);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      // props.close(false);
     } catch (err) {
       console.log(err);
     }
