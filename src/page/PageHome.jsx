@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HomeCover from "../component/home/Cover";
 import HomeEvent from "../component/home/HomeEvent";
 import HomeLocation from "../component/home/HomeLocation";
