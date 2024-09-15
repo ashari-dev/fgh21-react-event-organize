@@ -12,7 +12,7 @@ import { MdDownloading } from "react-icons/md";
 import Loading from "../../component/Loading";
 
 function EventPage() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const token = useSelector((state) => state.auth.token);
   const nav = useNavigate();
   const id = useParams().id;
@@ -59,7 +59,9 @@ function EventPage() {
                 className=" md:flex absolute md:relative right-8 mt-5 md:mt-0 gap-3 items-center text-xl text-white md:text-black"
               >
                 <FaRegHeart />{" "}
-                <span className="font-semibold hidden md:block">Add to Wishlist</span>
+                <span className="font-semibold hidden md:block">
+                  Add to Wishlist
+                </span>
               </button>
             )}
           </div>

@@ -10,7 +10,7 @@ import { login } from "../../redux/reducers/auth";
 import profile, { addData } from "../../redux/reducers/profile";
 
 function Login() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const [passwordShown, setPasswordShown] = React.useState(false);
   const nav = useNavigate();
   const dispatch = useDispatch();
@@ -44,7 +44,6 @@ function Login() {
         setAlert(false);
       }, 2000);
     }
-    
   }
   return (
     <>
@@ -74,7 +73,10 @@ function Login() {
               <h4 className="text-sm">Hi, Welcome back </h4>
             </div>
           </div>
-          <form onSubmit={handlerLogin} className="flex flex-col gap-5 md:px-20">
+          <form
+            onSubmit={handlerLogin}
+            className="flex flex-col gap-5 md:px-20"
+          >
             {alert ? (
               <div className="bg-red-200 py-1 px-5 text-red-600 rounded-lg">
                 {msg}

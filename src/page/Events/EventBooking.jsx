@@ -10,7 +10,7 @@ import { addDataSection } from "../../redux/reducers/section";
 import Loading from "../../component/Loading";
 
 function EventBooking() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const nav = useNavigate();
   const id = useParams().id;
   const { data, error, isLoading } = useGetEventQuery(id);
@@ -103,7 +103,7 @@ function EventBooking() {
                 />
               ))}
             </div>
-            <hr className=""/>
+            <hr className="" />
             <div className="flex flex-col gap-5">
               <div className="text-sm font-bold flex justify-between">
                 Ticket Section
