@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import { useSelector } from "react-redux";
 
 function Navbar() {
+  const url = "http://103.93.58.89:21216";
   const nav = useNavigate();
   const dataProfile = useSelector((state) => state.profile.data);
   function login() {
@@ -62,7 +63,7 @@ function Navbar() {
                 <img
                   src={
                     dataProfile?.picture !== null
-                      ? dataProfile?.picture
+                      ? url + dataProfile?.picture
                       : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
                   }
                   alt="Profile"

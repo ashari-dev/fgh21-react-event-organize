@@ -247,7 +247,7 @@ function EditProfile() {
                       src={
                         pic == undefined
                           ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
-                          : pic
+                          : url + pic
                       }
                       alt="Profile"
                       className="h-auto w-[115px] rounded-full brightness-50"

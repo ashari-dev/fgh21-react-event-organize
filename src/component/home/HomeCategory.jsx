@@ -8,7 +8,6 @@ function HomeCategory() {
   const url = "http://103.93.58.89:21216";
   const [category, setCategory] = useState([]);
   const { data, error, isLoading } = useListcategoriesQuery();
-  console.log(category);
   const [eventId, setEventId] = useState(0);
   async function getEventByCategory(id) {
     setEventId(id);
@@ -35,7 +34,7 @@ function HomeCategory() {
               <button
                 onClick={() => getEventByCategory(i.id)}
                 key={i.id}
-                className="hover:underline hover:-skew-y-3 hover:font-semibold hover:text-lg hover:text-gray-300"
+                className="hover:underline hover:font-semibold hover:text-lg hover:text-gray-300"
               >
                 {i.name}
               </button>

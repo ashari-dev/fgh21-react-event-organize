@@ -8,6 +8,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addDataSection } from "../../redux/reducers/section";
 import Loading from "../../component/Loading";
+import Alert from "../../component/Alert";
 
 function EventBooking() {
   const url = "http://103.93.58.89:21216";
@@ -18,6 +19,8 @@ function EventBooking() {
   const [selectedSection, setSelectedSection] = useState([]);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
+  const [alertLogin, setAlertLogin] = useState(false);
+  const [msg, setMsg] = useState("");
   useEffect(() => {
     (async () => {
       const data = await axios.get(`${url}/event/section/${id}`);
@@ -63,10 +66,30 @@ function EventBooking() {
   };
 
   dispatch(addDataSection(dataSection));
+  function handlerToPayment() {
+    if (quantity == 0) {
+      setAlertLogin(true);
+      setMsg("please choose your tickets");
+      setTimeout(() => {
+        setAlertLogin(false);
+      }, 2000);
+      return;
+    }
+
+    if (token == null) {
+      setAlertLogin(true);
+      setMsg("Please login to continue");
+      setTimeout(() => {
+        setAlertLogin(false);
+      }, 2000);
+      return;
+    }
+    nav("/event/payment");
+  }
   return (
     <>
       {isLoading ? <Loading /> : ""}
-
+      {alertLogin ? <Alert msg={msg} /> : ""}
       <Layout1>
         <div className="md:p-10 p-5 md:m-10 border md:rounded-3xl md:shadow-lg flex flex-col md:flex-row">
           <div className="flex-1 flex items-center justify-center">
@@ -125,8 +148,7 @@ function EventBooking() {
               </div>
             </div>
             <button
-              disabled={quantity == 0 || token == null}
-              onClick={() => nav("/event/payment")}
+              onClick={handlerToPayment}
               className="bg-red-500 py-2 rounded-xl text-white font-semibold"
             >
               Checkout

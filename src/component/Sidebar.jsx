@@ -15,6 +15,7 @@ import { removeData } from "../redux/reducers/profile";
 import { removeToken } from "../redux/reducers/auth";
 
 function Sidebar() {
+  const url = "http://103.93.58.89:21216";
   const dispatch = useDispatch();
   const nav = useNavigate();
   const [confirmLogout, setConfirmLogout] = useState(false);
@@ -60,7 +61,7 @@ function Sidebar() {
               <img
                 src={
                   dataProfile?.picture !== null
-                    ? dataProfile?.picture
+                    ? url + dataProfile?.picture
                     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
                 }
                 alt="Profile"
