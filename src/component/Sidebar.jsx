@@ -15,7 +15,7 @@ import { removeData } from "../redux/reducers/profile";
 import { removeToken } from "../redux/reducers/auth";
 
 function Sidebar() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const dispatch = useDispatch();
   const nav = useNavigate();
   const [confirmLogout, setConfirmLogout] = useState(false);
@@ -78,10 +78,12 @@ function Sidebar() {
         </div>
         <div>
           <ul className="flex flex-col gap-8">
-            <li className="flex gap-6 hover:text-blue-500">
-              <FaUser />
-              <span className="font-semibold text-sm ">Profile</span>
-            </li>
+            <Link to={"/profile"}>
+              <li className="flex gap-6 hover:text-blue-500">
+                <FaUser />
+                <span className="font-semibold text-sm ">Profile</span>
+              </li>
+            </Link>
             <li className="flex gap-6 pl-8 hover:text-blue-500">
               <FaCreditCard />
               <span className="font-semibold text-sm ">Card</span>

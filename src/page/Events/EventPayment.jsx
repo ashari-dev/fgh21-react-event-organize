@@ -14,7 +14,7 @@ import axios from "axios";
 import Loading from "../../component/Loading";
 
 function EventPayment() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const nav = useNavigate();
   const [payment, setPayment] = useState(1);
   const dataSection = useSelector((state) => state.section.data);

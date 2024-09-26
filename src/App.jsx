@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
+import Profile from "./page/Profile";
 
 const persist = persistStore(store);
 const routers = createBrowserRouter([
@@ -45,6 +46,10 @@ const routers = createBrowserRouter([
   {
     path: "/event/payment",
     element: <EventPayment />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
   {
     path: "/profile/edit-profile",

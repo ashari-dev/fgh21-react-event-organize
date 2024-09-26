@@ -6,7 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import Loading from "../component/Loading";
 
 function MyWishlist() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const token = useSelector((state) => state.auth.token);
   const [wishlist, setWishlist] = useState([]);
   const [del, setDelete] = useState(false);

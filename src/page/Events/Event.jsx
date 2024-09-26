@@ -12,7 +12,7 @@ import { MdDownloading } from "react-icons/md";
 import Loading from "../../component/Loading";
 
 function EventPage() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const token = useSelector((state) => state.auth.token);
   const nav = useNavigate();
   const id = useParams().id;

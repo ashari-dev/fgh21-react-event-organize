@@ -9,7 +9,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 function Register() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const [passwordShown, setPasswordShown] = React.useState(false);
   const [cPasswordShown, setCPasswordShown] = React.useState(false);
   const [accept, setACcept] = React.useState(true);
