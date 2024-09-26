@@ -76,7 +76,7 @@ function MyWishlist() {
                       </h2>
                       <div className="flex flex-col gap-2">
                         <span className="text-xs text[#373A42BF]">
-                          location {i.location}
+                          {i.location}
                         </span>
                         <span className="text-xs text[#373A42BF]">
                           {i.date}

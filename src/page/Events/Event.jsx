@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout1 from "../../component/layouts/Layout1";
 import { FaHeadSideCough, FaRegClock, FaRegHeart } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -7,9 +7,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useGetEventQuery } from "../../redux/services/event";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { MdDownloading } from "react-icons/md";
 import Loading from "../../component/Loading";
+import Alert from "../../component/Alert";
 
 function EventPage() {
   const url = "http://localhost:8080";
@@ -18,6 +17,9 @@ function EventPage() {
   const id = useParams().id;
   const { data, error, isLoading } = useGetEventQuery(id);
   const eventId = useParams().id;
+
+  const [err, setErr] = useState(false);
+  const [msg, setMsg] = useState();
   async function handlerWishlist() {
     try {
       const data = await axios.post(
@@ -31,15 +33,18 @@ function EventPage() {
           },
         }
       );
-      console.log(data);
     } catch (err) {
-      console.log(err);
+      setMsg(err.response.data.message);
+      setErr(true);
+      setTimeout(() => {
+        setErr(false);
+      }, 2000);
     }
   }
   return (
     <>
       {isLoading ? <Loading /> : ""}
-
+      {err ? <Alert msg={msg} /> : ""}
       <Layout1>
         <div className="md:p-10 p-5 md:m-10 border md:rounded-3xl md:shadow-lg flex flex-col md:flex-row">
           <div className="flex-1 flex flex-col gap-5 items-center">
@@ -71,7 +76,7 @@ function EventPage() {
             </h1>
             <div className="flex justify-between w-2/3">
               <span className="flex gap-3 items-center">
-                <FaLocationDot /> {data?.result?.locationId}
+                <FaLocationDot /> {data?.result?.location}
               </span>
               <span className="flex gap-3 items-center">
                 <FaRegClock /> {data?.result?.date}

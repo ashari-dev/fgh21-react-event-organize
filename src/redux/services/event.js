@@ -7,7 +7,7 @@ export const events = createApi({
   }),
   endpoints: (builder) => ({
     listEvents: builder.query({
-      query: () => `/event`,
+      query: (search) => `/event?search=${search}`,
     }),
     getEvent: builder.query({
       query: (id) => `/event/${id}`,

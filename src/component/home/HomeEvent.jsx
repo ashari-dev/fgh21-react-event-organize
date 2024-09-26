@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CardEvent from "../CardEvent";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useListEventsQuery } from "../../redux/services/event";
 
 function HomeEvent(props) {
-  const { data, error, isLoading } = useListEventsQuery();
+  const [search, setSearch] = useState("");
+  const { data, error, isLoading } = useListEventsQuery(search);
   props.setLoading(isLoading);
   return (
     <>
@@ -16,7 +17,7 @@ function HomeEvent(props) {
           <h1 className="text-4xl font-semibold">Events For You</h1>
         </div>
 
-        <div className="flex gap-10 overflow-x-scroll md:overflow-auto justify-center">
+        {/* <div className="flex gap-10 overflow-x-scroll md:overflow-auto justify-center">
           <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
             13 <span>Sen</span>
           </div>
@@ -32,7 +33,16 @@ function HomeEvent(props) {
           <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
             13 <span>Sen</span>
           </div>
-        </div>
+        </div> */}
+        <form className="flex justify-end">
+          <input
+            className="border rounded-xl px-5 py-2 outline-none"
+            type="text"
+            placeholder="Search events by title"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
 
         <div className="flex gap-5 overflow-x-scroll">
           {isLoading || error
