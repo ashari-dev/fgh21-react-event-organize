@@ -16,6 +16,7 @@ import { store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import Profile from "./page/Profile";
+import Location from "./page/Location";
 
 const persist = persistStore(store);
 const routers = createBrowserRouter([
@@ -70,6 +71,10 @@ const routers = createBrowserRouter([
   {
     path: "/create-event",
     element: <CreateEvent />,
+  },
+  {
+    path: "/location",
+    element: <Location />,
   },
 ]);
 function App() {

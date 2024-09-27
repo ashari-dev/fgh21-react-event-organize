@@ -55,10 +55,7 @@ function Navbar() {
           </div>
         ) : (
           <div className="flex flex-1 justify-end gap-5">
-            <Link
-              to={"/profile/edit-profile"}
-              className="flex items-center gap-2 "
-            >
+            <Link to={"/profile"} className="flex items-center gap-2 ">
               <div className="h-12 w-12 rounded-full border-2 border-[#180161] overflow-hidden">
                 <img
                   src={

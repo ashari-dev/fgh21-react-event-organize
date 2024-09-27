@@ -26,7 +26,7 @@ function HomeLocation() {
             </h1>
           </div>
           {data.map((i) => (
-            <div className="w-60 flex flex-col gap-2 items-center">
+            <div key={i.id} className="w-60 flex flex-col gap-2 items-center">
               <div className=" bg-white overflow-hidden rounded-2xl flex items-center justify-center">
                 <img className="object-cover" src={i.image} alt="" />
               </div>

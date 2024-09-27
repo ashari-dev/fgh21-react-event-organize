@@ -16,24 +16,6 @@ function HomeEvent(props) {
           </span>
           <h1 className="text-4xl font-semibold">Events For You</h1>
         </div>
-
-        {/* <div className="flex gap-10 overflow-x-scroll md:overflow-auto justify-center">
-          <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
-            13 <span>Sen</span>
-          </div>
-          <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
-            13 <span>Sen</span>
-          </div>
-          <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
-            13 <span>Sen</span>
-          </div>
-          <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
-            13 <span>Sen</span>
-          </div>
-          <div className="flex flex-col  items-center border-2 p-2 rounded-xl font-semibold">
-            13 <span>Sen</span>
-          </div>
-        </div> */}
         <form className="flex justify-end">
           <input
             className="border rounded-xl px-5 py-2 outline-none"

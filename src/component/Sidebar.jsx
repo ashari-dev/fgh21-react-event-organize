@@ -8,7 +8,12 @@ import {
   FaUnlock,
   FaUser,
 } from "react-icons/fa";
-import { FaArrowUpFromBracket, FaCirclePlus, FaGear } from "react-icons/fa6";
+import {
+  FaArrowUpFromBracket,
+  FaCirclePlus,
+  FaGear,
+  FaLocationDot,
+} from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { removeData } from "../redux/reducers/profile";
@@ -118,6 +123,16 @@ function Sidebar() {
                 <span className="font-semibold text-sm ">My Wishlist</span>
               </li>
             </Link>
+            {dataProfile.roleId === 1 ? (
+              <Link to={"/location"}>
+                <li className="flex gap-6 hover:text-blue-500">
+                  <FaLocationDot />
+                  <span className="font-semibold text-sm ">Location</span>
+                </li>
+              </Link>
+            ) : (
+              ""
+            )}
             <li className="flex gap-6 hover:text-blue-500">
               <FaGear />
               <span className="font-semibold text-sm ">Settings</span>

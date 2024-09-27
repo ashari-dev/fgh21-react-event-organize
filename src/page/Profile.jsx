@@ -170,7 +170,7 @@ function Profile() {
                           : url + pic
                       }
                       alt="Profile"
-                      className="h-auto w-[115px] rounded-full brightness-50"
+                      className="h-auto w-[115px] rounded-full"
                     />
                   </label>
                 </form>
