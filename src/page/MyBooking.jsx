@@ -6,7 +6,7 @@ import { removeDataSection } from "../redux/reducers/section";
 import Loading from "../component/Loading";
 
 function MyBooking() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const [data, setData] = useState([]);
   const token = useSelector((state) => state.auth.token);
   const dispatch = useDispatch();

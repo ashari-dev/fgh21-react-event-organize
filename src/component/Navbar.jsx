@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const nav = useNavigate();
   const dataProfile = useSelector((state) => state.profile.data);
   function login() {

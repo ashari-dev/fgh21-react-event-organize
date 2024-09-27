@@ -4,7 +4,7 @@ import { useListcategoriesQuery } from "../redux/services/categories";
 import axios from "axios";
 
 function ModalUpdate(props) {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const { data, error, isLoading } = useListcategoriesQuery();
   const [location, setLocation] = useState([]);
   console.log(props.data);
