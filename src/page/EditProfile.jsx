@@ -7,7 +7,7 @@ import { addData } from "../redux/reducers/profile";
 import Alert from "../component/Alert";
 
 function EditProfile() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const token = useSelector((state) => state.auth.token);
   const dispatch = useDispatch();
   const [success, setSuccess] = useState(false);

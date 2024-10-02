@@ -11,7 +11,7 @@ import Loading from "../../component/Loading";
 import Alert from "../../component/Alert";
 
 function EventBooking() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const nav = useNavigate();
   const id = useParams().id;
   const { data, error, isLoading } = useGetEventQuery(id);

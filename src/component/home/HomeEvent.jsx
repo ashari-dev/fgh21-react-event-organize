@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardEvent from "../CardEvent";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useListEventsQuery } from "../../redux/services/event";
 
 function HomeEvent(props) {
   const [search, setSearch] = useState("");
-  const { data, error, isLoading } = useListEventsQuery(search);
+  const [limit, setLimit] = useState(5);
+  const [page, setPage] = useState(1);
+  const [query, setQuery] = useState({});
+  useEffect(() => {
+    setQuery({ search, limit, page });
+  }, [search, limit, page]);
+  const { data, error, isLoading } = useListEventsQuery(query);
   props.setLoading(isLoading);
+
   return (
     <>
       <section className="md:px-20 px-5 flex flex-col gap-10">
@@ -26,20 +33,51 @@ function HomeEvent(props) {
           />
         </form>
 
-        <div className="flex gap-5 overflow-x-scroll">
-          {isLoading || error
-            ? ""
-            : data.result.map((item) => (
-                <CardEvent key={item.id} data={item} />
-              ))}
+        <div>
+          <div className="flex gap-5 overflow-x-scroll">
+            {isLoading || error
+              ? ""
+              : data.result.map((item) => (
+                  <CardEvent key={item.id} data={item} />
+                ))}
+          </div>
+          <div className="flex justify-between">
+            <p>Total Pages : {data?.pageInfo?.totalPage}</p>
+            <p>Total Event : {data?.pageInfo?.totalData}</p>
+          </div>
         </div>
-        <div className="flex gap-3 justify-center">
-          <button className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
-            <FaArrowLeft />
-          </button>
-          <button className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white">
-            <FaArrowRight />
-          </button>
+        <div className="flex gap-3 items-center justify-center">
+          {data?.pageInfo?.prev == 0 ? (
+            <button
+              disabled
+              className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white"
+            >
+              <FaArrowLeft />
+            </button>
+          ) : (
+            <button
+              onClick={() => setPage(page - 1)}
+              className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white"
+            >
+              <FaArrowLeft />
+            </button>
+          )}
+          {data?.pageInfo?.page}
+          {data?.pageInfo?.next == 0 ? (
+            <button
+              disabled
+              className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white"
+            >
+              <FaArrowRight />
+            </button>
+          ) : (
+            <button
+              onClick={() => setPage(page + 1)}
+              className=" p-3 rounded-xl shadow bg-red-500 hover:bg-red-600 text-white"
+            >
+              <FaArrowRight />
+            </button>
+          )}
         </div>
       </section>
     </>

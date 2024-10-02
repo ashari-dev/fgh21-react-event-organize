@@ -5,7 +5,7 @@ import { FaCamera } from "react-icons/fa";
 import axios from "axios";
 
 function Profile() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const data = useSelector((state) => state.profile.data);
   const [pic, setPic] = useState();
   const [nationalities, setNationalities] = useState([]);

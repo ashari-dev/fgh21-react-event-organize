@@ -3,7 +3,7 @@ import bg from "../../assets/img/bg2.png";
 import axios from "axios";
 
 function HomeLocation() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const [data, setData] = useState([]);
   useEffect(() => {
     (async () => {

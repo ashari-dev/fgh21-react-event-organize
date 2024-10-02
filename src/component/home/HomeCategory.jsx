@@ -5,7 +5,7 @@ import { useListcategoriesQuery } from "../../redux/services/categories";
 import axios from "axios";
 
 function HomeCategory() {
-  const url = "http://103.93.58.89:21216";
+  const url = "http://localhost:8080";
   const [category, setCategory] = useState([]);
   const { data, error, isLoading } = useListcategoriesQuery();
   const [eventId, setEventId] = useState(0);
