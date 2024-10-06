@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import ModalUpdate from "../component/ModalUpdate";
 import Loading from "../component/Loading";
+import ModalDeleteEvent from "../component/ModalDelete";
 
 function CreateEvent() {
   const url = "http://localhost:8080";
@@ -12,40 +13,38 @@ function CreateEvent() {
   const [modal, setModal] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
   const [alert, setAlert] = useState(false);
+  const [alertSuccess, setAlertSuccess] = useState(false);
   const [dataEvent, setDataEvent] = useState([]);
   const [dataUpdate, setDataUpdate] = useState({});
   const [loading, setLoading] = useState(false);
+  const [deleteEvent, setDeleteEvent] = useState(false);
+  const [id, setId] = useState(0);
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const data = await axios(`${url}/event/my-events`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       setDataEvent(data.data.result);
+      setLoading(false);
     })();
-  }, [modal, modalUpdate, alert]);
+  }, [modal, modalUpdate, deleteEvent]);
 
   function handlerUpdate(data) {
     setDataUpdate(data);
     setModalUpdate(true);
   }
-  async function handlerDelete(id) {
-    try {
-      const respont = await axios.delete(`${url}/event/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setAlert(true);
-      setTimeout(() => {
-        setAlert(false);
-      }, 2000);
-    } catch (error) {}
-  }
+
   return (
     <>
+      {deleteEvent ? (
+        <ModalDeleteEvent token={token} close={setDeleteEvent} id={id} />
+      ) : (
+        ""
+      )}
       {loading ? <Loading /> : ""}
       {modal ? <Modal token={token} close={setModal} /> : ""}
       {modalUpdate ? (
@@ -55,6 +54,11 @@ function CreateEvent() {
       )}
       <Layout2>
         {alert ? <p>data berhasil di hapus</p> : ""}
+        {alertSuccess ? (
+          <p className="text-green-500">Create Event Success</p>
+        ) : (
+          ""
+        )}
         <div className="text-xl font-bold flex justify-between items-center">
           Manage Event
           <button
@@ -95,7 +99,10 @@ function CreateEvent() {
                           Update
                         </button>
                         <button
-                          onClick={() => handlerDelete(i.id)}
+                          onClick={() => {
+                            setDeleteEvent(true);
+                            setId(i.id);
+                          }}
                           className="text-xs text-[#180161] mt-1"
                         >
                           Delete

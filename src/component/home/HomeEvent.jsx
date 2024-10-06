@@ -13,7 +13,6 @@ function HomeEvent(props) {
   }, [search, limit, page]);
   const { data, error, isLoading } = useListEventsQuery(query);
   props.setLoading(isLoading);
-
   return (
     <>
       <section className="md:px-20 px-5 flex flex-col gap-10">
