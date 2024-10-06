@@ -4,6 +4,7 @@ import { useListcategoriesQuery } from "../redux/services/categories";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import Loading from "./Loading";
 
 function Modal(props) {
   const url = "http://localhost:8080";
@@ -28,10 +29,12 @@ function Modal(props) {
       date: "",
       detail: "",
       location: "",
+      price: "",
       category: "",
     },
     validationSchema: yup.object({
       name: yup.string().min(2, "minimum 2 characters").required("Required!"),
+      price: yup.string().required("Required!"),
       date: yup.date().required("Required!"),
       detail: yup
         .string()
@@ -49,7 +52,6 @@ function Modal(props) {
     formData.append("date", e.target.date.value);
     formData.append("description", e.target.detail.value);
     formData.append("locationId", parseInt(e.target.location.value));
-    console.log(formData);
     try {
       const response = await axios.post(`${url}/event`, formData, {
         headers: {
@@ -72,9 +74,25 @@ function Modal(props) {
               },
             }
           );
+          const response2 = await axios.post(
+            `${url}/event/section`,
+            {
+              name: "reguler",
+              price: parseInt(e.target.price.value),
+              quantity: 50,
+              eventId: response.data.result.id,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${props.token}`,
+              },
+            }
+          );
           console.log(respon);
+          console.log(response2);
           props.close(false);
         } catch (error) {
+          console.log(error);
           setAlert(true);
           setTimeout(() => {
             setAlert(false);
@@ -91,6 +109,7 @@ function Modal(props) {
   }
   return (
     <>
+    
       <div className="md:h-full w-full bg-[#00000047] fixed top-0">
         <div className="bg-white p-16 m-20 rounded-3xl flex flex-col relative gap-10">
           <button
@@ -180,6 +199,25 @@ function Modal(props) {
               />
               {formix.errors.name && (
                 <p className="text-red-500 text-sm">{formix.errors.date}</p>
+              )}
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-[#373A42] text-sm" htmlFor="price">
+                Price
+              </label>
+
+              <input
+                type="number"
+                name="price"
+                id="price"
+                placeholder="Input Event Price"
+                className="h-[55px] border pl-6 rounded-2xl"
+                autoComplete="off"
+                value={formix.values.price}
+                onChange={formix.handleChange}
+              />
+              {formix.errors.name && (
+                <p className="text-red-500 text-sm">{formix.errors.price}</p>
               )}
             </div>
 
