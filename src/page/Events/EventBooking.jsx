@@ -97,7 +97,11 @@ function EventBooking() {
               <div className="bg-gradient-to-t from-zinc-900 to-transparent absolute w-full h-full opacity-100"></div>
               <img
                 className="object-cover w-full"
-                src={data?.result?.image}
+                src={
+                  data?.result?.image[0] === "/"
+                    ? url + data?.result?.image
+                    : data?.result?.image
+                }
                 alt=""
               />
             </div>

@@ -4,7 +4,6 @@ import { useListcategoriesQuery } from "../redux/services/categories";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Loading from "./Loading";
 
 function Modal(props) {
   const url = "http://localhost:8080";
@@ -109,7 +108,7 @@ function Modal(props) {
   }
   return (
     <>
-    
+
       <div className="md:h-full w-full bg-[#00000047] fixed top-0">
         <div className="bg-white p-16 m-20 rounded-3xl flex flex-col relative gap-10">
           <button
