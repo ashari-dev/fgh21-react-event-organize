@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 function Modal(props) {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const { data, error, isLoading } = useListcategoriesQuery();
   const [location, setLocation] = useState([]);
   const [alert, setAlert] = useState(false);
@@ -108,7 +108,6 @@ function Modal(props) {
   }
   return (
     <>
-
       <div className="md:h-full w-full bg-[#00000047] fixed top-0">
         <div className="bg-white p-16 m-20 rounded-3xl flex flex-col relative gap-10">
           <button

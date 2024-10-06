@@ -3,7 +3,7 @@ import Attendess from "./Attendess";
 import { Link } from "react-router-dom";
 
 function CardEvent(props) {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
 
   return (
     <Link to={"/event/" + props.data?.id}>

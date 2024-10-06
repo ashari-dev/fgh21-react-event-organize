@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 function ModalDeleteEvent(props) {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   async function handlerDelete() {
     try {
       const respont = await axios.delete(`${url}/event/${props.id}`, {
@@ -10,7 +10,7 @@ function ModalDeleteEvent(props) {
           Authorization: `Bearer ${props.token}`,
         },
       });
-      props.close(false)
+      props.close(false);
       console.log(respont);
     } catch (error) {
       console.log(error);

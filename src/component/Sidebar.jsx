@@ -20,7 +20,7 @@ import { removeData } from "../redux/reducers/profile";
 import { removeToken } from "../redux/reducers/auth";
 
 function Sidebar() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const dispatch = useDispatch();
   const nav = useNavigate();
   const [confirmLogout, setConfirmLogout] = useState(false);

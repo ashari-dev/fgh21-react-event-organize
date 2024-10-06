@@ -5,7 +5,7 @@ import AddLocation from "../component/AddLocation";
 
 function Location() {
   const [data, setData] = useState([]);
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const [addLocation, setAddLocation] = useState(false);
   useEffect(() => {
     (async () => {

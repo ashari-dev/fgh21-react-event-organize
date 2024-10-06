@@ -10,7 +10,7 @@ import { login } from "../../redux/reducers/auth";
 import profile, { addData } from "../../redux/reducers/profile";
 
 function Login() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const [passwordShown, setPasswordShown] = React.useState(false);
   const nav = useNavigate();
   const dispatch = useDispatch();

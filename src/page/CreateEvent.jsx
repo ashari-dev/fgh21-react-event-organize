@@ -8,7 +8,7 @@ import Loading from "../component/Loading";
 import ModalDeleteEvent from "../component/ModalDelete";
 
 function CreateEvent() {
-  const url = "http://localhost:8080";
+  const url = "http://103.93.58.89:21216";
   const token = useSelector((state) => state.auth.token);
   const [modal, setModal] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
